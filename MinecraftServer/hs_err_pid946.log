@@ -1,0 +1,366 @@
+#
+# There is insufficient memory for the Java Runtime Environment to continue.
+# Native memory allocation (mmap) failed to map 1118568448 bytes for committing reserved memory.
+# Possible reasons:
+#   The system is out of physical RAM or swap space
+#   In 32 bit mode, the process size limit was hit
+# Possible solutions:
+#   Reduce memory load on the system
+#   Increase physical memory or swap space
+#   Check if swap backing store is full
+#   Use 64 bit Java on a 64 bit OS
+#   Decrease Java heap size (-Xmx/-Xms)
+#   Decrease number of Java threads
+#   Decrease Java thread stack sizes (-Xss)
+#   Set larger code cache with -XX:ReservedCodeCacheSize=
+# This output file may be truncated or incomplete.
+#
+#  Out of Memory Error (os_linux.cpp:2922), pid=946, tid=947
+#
+# JRE version:  (11.0.9.1+1) (build )
+# Java VM: OpenJDK Server VM (11.0.9.1+1-post-Raspbian-1deb10u2, mixed mode, sharing, serial gc, linux-)
+# No core dump will be written. Core dumps have been disabled. To enable core dumping, try "ulimit -c unlimited" before starting Java again
+#
+
+---------------  S U M M A R Y ------------
+
+Command Line: -Xmx1600M -Xms1600M server.jar nogui
+
+Host: rev 4 (v7l), 4 cores, 936M, Raspbian GNU/Linux 10 (buster)
+Time: Thu Feb 18 22:17:30 2021 CST elapsed time: 0.068394 seconds (0d 0h 0m 0s)
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x75f0ec00):  JavaThread "Unknown thread" [_thread_in_vm, id=947, stack(0x760b0000,0x76100000)]
+
+Stack: [0x760b0000,0x76100000],  sp=0x760fe7b8,  free space=313k
+Native frames: (J=compiled Java code, A=aot compiled Java code, j=interpreted, Vv=VM code, C=native code)
+V  [libjvm.so+0x99984c]
+V  [libjvm.so+0x99a540]
+V  [libjvm.so+0x3580ac]
+V  [libjvm.so+0x7be4d4]
+V  [libjvm.so+0x7b4d2c]
+V  [libjvm.so+0x9903ac]
+V  [libjvm.so+0x489334]
+V  [libjvm.so+0x234c74]
+V  [libjvm.so+0x91f898]
+V  [libjvm.so+0x489e80]
+V  [libjvm.so+0x474c88]
+V  [libjvm.so+0x95583c]
+V  [libjvm.so+0x95591c]
+V  [libjvm.so+0x4d8804]
+V  [libjvm.so+0x92ba30]
+V  [libjvm.so+0x58220c]  JNI_CreateJavaVM+0x78
+
+
+---------------  P R O C E S S  ---------------
+
+Threads class SMR info:
+_java_thread_list=0x00688600, length=0, elements={
+}
+
+Java Threads: ( => current thread )
+
+Other Threads:
+
+=>0x75f0ec00 (exited) JavaThread "Unknown thread" [_thread_in_vm, id=947, stack(0x760b0000,0x76100000)]
+
+Threads with active compile tasks:
+
+VM state:not at safepoint (not fully initialized)
+
+VM Mutex/Monitor currently owned by a thread: None
+
+GC Heap History (0 events):
+No events
+
+Deoptimization events (0 events):
+No events
+
+Classes redefined (0 events):
+No events
+
+Internal exceptions (0 events):
+No events
+
+Events (2 events):
+Event: 0.016 Protecting memory [0x760b0000,0x760b3000] with protection modes 0
+Event: 0.017 Loaded shared library /usr/lib/jvm/java-11-openjdk-armhf/lib/libzip.so
+
+
+Dynamic libraries:
+00010000-00011000 r-xp 00000000 b3:02 13196      /usr/lib/jvm/java-11-openjdk-armhf/bin/java
+00020000-00021000 r--p 00000000 b3:02 13196      /usr/lib/jvm/java-11-openjdk-armhf/bin/java
+00021000-00022000 rw-p 00001000 b3:02 13196      /usr/lib/jvm/java-11-openjdk-armhf/bin/java
+00680000-006a1000 rw-p 00000000 00:00 0          [heap]
+0f8df000-0f9ea000 rw-p 00000000 00:00 0 
+0f9ea000-0fbff000 ---p 00000000 00:00 0 
+0fbff000-31140000 rw-p 00000000 00:00 0 
+73d53000-73d56000 rw-p 00000000 00:00 0 
+73d56000-73d93000 ---p 00000000 00:00 0 
+73d93000-73f13000 rwxp 00000000 00:00 0 
+73f13000-75d93000 ---p 00000000 00:00 0 
+75d93000-75f00000 r--s 00000000 b3:02 13365      /usr/lib/jvm/java-11-openjdk-armhf/lib/modules
+75f00000-75f27000 rw-p 00000000 00:00 0 
+75f27000-76000000 ---p 00000000 00:00 0 
+76016000-7601f000 r-xp 00000000 b3:02 261736     /lib/arm-linux-gnueabihf/libnss_files-2.28.so
+7601f000-7602f000 ---p 00009000 b3:02 261736     /lib/arm-linux-gnueabihf/libnss_files-2.28.so
+7602f000-76030000 r--p 00009000 b3:02 261736     /lib/arm-linux-gnueabihf/libnss_files-2.28.so
+76030000-76031000 rw-p 0000a000 b3:02 261736     /lib/arm-linux-gnueabihf/libnss_files-2.28.so
+76031000-76037000 rw-p 00000000 00:00 0 
+76038000-7603e000 r-xp 00000000 b3:02 13364      /usr/lib/jvm/java-11-openjdk-armhf/lib/libzip.so
+7603e000-7604d000 ---p 00006000 b3:02 13364      /usr/lib/jvm/java-11-openjdk-armhf/lib/libzip.so
+7604d000-7604e000 r--p 00005000 b3:02 13364      /usr/lib/jvm/java-11-openjdk-armhf/lib/libzip.so
+7604e000-7604f000 rw-p 00006000 b3:02 13364      /usr/lib/jvm/java-11-openjdk-armhf/lib/libzip.so
+7604f000-7606d000 r-xp 00000000 b3:02 13257      /usr/lib/jvm/java-11-openjdk-armhf/lib/libjava.so
+7606d000-7607c000 ---p 0001e000 b3:02 13257      /usr/lib/jvm/java-11-openjdk-armhf/lib/libjava.so
+7607c000-7607d000 r--p 0001d000 b3:02 13257      /usr/lib/jvm/java-11-openjdk-armhf/lib/libjava.so
+7607d000-7607e000 rw-p 0001e000 b3:02 13257      /usr/lib/jvm/java-11-openjdk-armhf/lib/libjava.so
+7607e000-76088000 r-xp 00000000 b3:02 13363      /usr/lib/jvm/java-11-openjdk-armhf/lib/libverify.so
+76088000-76097000 ---p 0000a000 b3:02 13363      /usr/lib/jvm/java-11-openjdk-armhf/lib/libverify.so
+76097000-76098000 r--p 00009000 b3:02 13363      /usr/lib/jvm/java-11-openjdk-armhf/lib/libverify.so
+76098000-76099000 rw-p 0000a000 b3:02 13363      /usr/lib/jvm/java-11-openjdk-armhf/lib/libverify.so
+76099000-7609f000 r-xp 00000000 b3:02 261765     /lib/arm-linux-gnueabihf/librt-2.28.so
+7609f000-760ae000 ---p 00006000 b3:02 261765     /lib/arm-linux-gnueabihf/librt-2.28.so
+760ae000-760af000 r--p 00005000 b3:02 261765     /lib/arm-linux-gnueabihf/librt-2.28.so
+760af000-760b0000 rw-p 00006000 b3:02 261765     /lib/arm-linux-gnueabihf/librt-2.28.so
+760b0000-760b3000 ---p 00000000 00:00 0 
+760b3000-76100000 rw-p 00000000 00:00 0 
+76100000-7611c000 r-xp 00000000 b3:02 261712     /lib/arm-linux-gnueabihf/libgcc_s.so.1
+7611c000-7612b000 ---p 0001c000 b3:02 261712     /lib/arm-linux-gnueabihf/libgcc_s.so.1
+7612b000-7612c000 r--p 0001b000 b3:02 261712     /lib/arm-linux-gnueabihf/libgcc_s.so.1
+7612c000-7612d000 rw-p 0001c000 b3:02 261712     /lib/arm-linux-gnueabihf/libgcc_s.so.1
+7612d000-7619e000 r-xp 00000000 b3:02 261722     /lib/arm-linux-gnueabihf/libm-2.28.so
+7619e000-761ad000 ---p 00071000 b3:02 261722     /lib/arm-linux-gnueabihf/libm-2.28.so
+761ad000-761ae000 r--p 00070000 b3:02 261722     /lib/arm-linux-gnueabihf/libm-2.28.so
+761ae000-761af000 rw-p 00071000 b3:02 261722     /lib/arm-linux-gnueabihf/libm-2.28.so
+761af000-762dd000 r-xp 00000000 b3:02 272920     /usr/lib/arm-linux-gnueabihf/libstdc++.so.6.0.25
+762dd000-762ed000 ---p 0012e000 b3:02 272920     /usr/lib/arm-linux-gnueabihf/libstdc++.so.6.0.25
+762ed000-762f2000 r--p 0012e000 b3:02 272920     /usr/lib/arm-linux-gnueabihf/libstdc++.so.6.0.25
+762f2000-762f4000 rw-p 00133000 b3:02 272920     /usr/lib/arm-linux-gnueabihf/libstdc++.so.6.0.25
+762f4000-762f6000 rw-p 00000000 00:00 0 
+762f6000-76d32000 r-xp 00000000 b3:02 13369      /usr/lib/jvm/java-11-openjdk-armhf/lib/server/libjvm.so
+76d32000-76d42000 ---p 00a3c000 b3:02 13369      /usr/lib/jvm/java-11-openjdk-armhf/lib/server/libjvm.so
+76d42000-76d83000 r--p 00a3c000 b3:02 13369      /usr/lib/jvm/java-11-openjdk-armhf/lib/server/libjvm.so
+76d83000-76d9c000 rw-p 00a7d000 b3:02 13369      /usr/lib/jvm/java-11-openjdk-armhf/lib/server/libjvm.so
+76d9c000-76dc7000 rw-p 00000000 00:00 0 
+76dc7000-76eff000 r-xp 00000000 b3:02 261697     /lib/arm-linux-gnueabihf/libc-2.28.so
+76eff000-76f0f000 ---p 00138000 b3:02 261697     /lib/arm-linux-gnueabihf/libc-2.28.so
+76f0f000-76f11000 r--p 00138000 b3:02 261697     /lib/arm-linux-gnueabihf/libc-2.28.so
+76f11000-76f12000 rw-p 0013a000 b3:02 261697     /lib/arm-linux-gnueabihf/libc-2.28.so
+76f12000-76f15000 rw-p 00000000 00:00 0 
+76f15000-76f17000 r-xp 00000000 b3:02 261705     /lib/arm-linux-gnueabihf/libdl-2.28.so
+76f17000-76f26000 ---p 00002000 b3:02 261705     /lib/arm-linux-gnueabihf/libdl-2.28.so
+76f26000-76f27000 r--p 00001000 b3:02 261705     /lib/arm-linux-gnueabihf/libdl-2.28.so
+76f27000-76f28000 rw-p 00002000 b3:02 261705     /lib/arm-linux-gnueabihf/libdl-2.28.so
+76f28000-76f35000 r-xp 00000000 b3:02 13241      /usr/lib/jvm/java-11-openjdk-armhf/lib/jli/libjli.so
+76f35000-76f44000 ---p 0000d000 b3:02 13241      /usr/lib/jvm/java-11-openjdk-armhf/lib/jli/libjli.so
+76f44000-76f45000 r--p 0000c000 b3:02 13241      /usr/lib/jvm/java-11-openjdk-armhf/lib/jli/libjli.so
+76f45000-76f46000 rw-p 0000d000 b3:02 13241      /usr/lib/jvm/java-11-openjdk-armhf/lib/jli/libjli.so
+76f46000-76f5d000 r-xp 00000000 b3:02 261761     /lib/arm-linux-gnueabihf/libpthread-2.28.so
+76f5d000-76f6c000 ---p 00017000 b3:02 261761     /lib/arm-linux-gnueabihf/libpthread-2.28.so
+76f6c000-76f6d000 r--p 00016000 b3:02 261761     /lib/arm-linux-gnueabihf/libpthread-2.28.so
+76f6d000-76f6e000 rw-p 00017000 b3:02 261761     /lib/arm-linux-gnueabihf/libpthread-2.28.so
+76f6e000-76f70000 rw-p 00000000 00:00 0 
+76f70000-76f8a000 r-xp 00000000 b3:02 261784     /lib/arm-linux-gnueabihf/libz.so.1.2.11
+76f8a000-76f99000 ---p 0001a000 b3:02 261784     /lib/arm-linux-gnueabihf/libz.so.1.2.11
+76f99000-76f9a000 r--p 00019000 b3:02 261784     /lib/arm-linux-gnueabihf/libz.so.1.2.11
+76f9a000-76f9b000 rw-p 0001a000 b3:02 261784     /lib/arm-linux-gnueabihf/libz.so.1.2.11
+76f9e000-76fa2000 r-xp 00000000 b3:02 13261      /usr/lib/jvm/java-11-openjdk-armhf/lib/libjimage.so
+76fa2000-76fb1000 ---p 00004000 b3:02 13261      /usr/lib/jvm/java-11-openjdk-armhf/lib/libjimage.so
+76fb1000-76fb2000 r--p 00003000 b3:02 13261      /usr/lib/jvm/java-11-openjdk-armhf/lib/libjimage.so
+76fb2000-76fb3000 rw-p 00004000 b3:02 13261      /usr/lib/jvm/java-11-openjdk-armhf/lib/libjimage.so
+76fb3000-76fb7000 r-xp 00000000 b3:02 272380     /usr/lib/arm-linux-gnueabihf/libarmmem-v7l.so
+76fb7000-76fc6000 ---p 00004000 b3:02 272380     /usr/lib/arm-linux-gnueabihf/libarmmem-v7l.so
+76fc6000-76fc7000 r--p 00003000 b3:02 272380     /usr/lib/arm-linux-gnueabihf/libarmmem-v7l.so
+76fc7000-76fc8000 rw-p 00004000 b3:02 272380     /usr/lib/arm-linux-gnueabihf/libarmmem-v7l.so
+76fc8000-76fe8000 r-xp 00000000 b3:02 261615     /lib/arm-linux-gnueabihf/ld-2.28.so
+76fe9000-76feb000 r--s 00007000 b3:02 162059     /usr/share/java/java-atk-wrapper.jar
+76feb000-76ff3000 rw-s 00000000 b3:02 391690     /tmp/hsperfdata_pi/946
+76ff3000-76ff4000 r--p 00000000 00:00 0 
+76ff4000-76ff8000 rw-p 00000000 00:00 0 
+76ff8000-76ff9000 r--p 00020000 b3:02 261615     /lib/arm-linux-gnueabihf/ld-2.28.so
+76ff9000-76ffa000 rw-p 00021000 b3:02 261615     /lib/arm-linux-gnueabihf/ld-2.28.so
+7ef1b000-7ef3c000 rw-p 00000000 00:00 0          [stack]
+7ef7a000-7ef7b000 r-xp 00000000 00:00 0          [sigpage]
+7ef7b000-7ef7c000 r--p 00000000 00:00 0          [vvar]
+7ef7c000-7ef7d000 r-xp 00000000 00:00 0          [vdso]
+ffff0000-ffff1000 r-xp 00000000 00:00 0          [vectors]
+
+
+VM Arguments:
+jvm_args: -Xmx1600M -Xms1600M 
+java_command: server.jar nogui
+java_class_path (initial): server.jar
+Launcher Type: SUN_STANDARD
+
+[Global flags]
+   size_t InitialHeapSize                          = 1677721600                                {product} {command line}
+   size_t MaxHeapSize                              = 1677721600                                {product} {command line}
+   size_t MaxNewSize                               = 559153152                                 {product} {ergonomic}
+   size_t MinHeapDeltaBytes                        = 131072                                    {product} {ergonomic}
+   size_t NewSize                                  = 559153152                                 {product} {ergonomic}
+    uintx NonProfiledCodeHeapSize                  = 0                                      {pd product} {ergonomic}
+   size_t OldSize                                  = 1118568448                                {product} {ergonomic}
+    uintx ProfiledCodeHeapSize                     = 0                                      {pd product} {ergonomic}
+     bool UseSerialGC                              = true                                      {product} {ergonomic}
+
+Logging:
+Log output configuration:
+ #0: stdout all=warning uptime,level,tags
+ #1: stderr all=off uptime,level,tags
+
+Environment Variables:
+PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/local/games:/usr/games
+SHELL=/bin/bash
+DISPLAY=localhost:10.0
+LANG=en_US.UTF-8
+LC_ALL=en_US.UTF-8
+
+Signal Handlers:
+SIGSEGV: [libjvm.so+0x99a5cc], sa_mask[0]=11111111011111111101111111111110, sa_flags=SA_RESTART|SA_SIGINFO
+SIGBUS: [libjvm.so+0x99a5cc], sa_mask[0]=11111111011111111101111111111110, sa_flags=SA_RESTART|SA_SIGINFO
+SIGFPE: [libjvm.so+0x99a5cc], sa_mask[0]=11111111011111111101111111111110, sa_flags=SA_RESTART|SA_SIGINFO
+SIGPIPE: [libjvm.so+0x7b9458], sa_mask[0]=11111111011111111101111111111110, sa_flags=SA_RESTART|SA_SIGINFO
+SIGXFSZ: [libjvm.so+0x7b9458], sa_mask[0]=11111111011111111101111111111110, sa_flags=SA_RESTART|SA_SIGINFO
+SIGILL: [libjvm.so+0x99a5cc], sa_mask[0]=11111111011111111101111111111110, sa_flags=SA_RESTART|SA_SIGINFO
+SIGUSR2: [libjvm.so+0x7b92f0], sa_mask[0]=00000000000000000000000000000000, sa_flags=SA_RESTART|SA_SIGINFO
+SIGHUP: SIG_DFL, sa_mask[0]=00000000000000000000000000000000, sa_flags=none
+SIGINT: SIG_DFL, sa_mask[0]=00000000000000000000000000000000, sa_flags=none
+SIGTERM: SIG_DFL, sa_mask[0]=00000000000000000000000000000000, sa_flags=none
+SIGQUIT: SIG_DFL, sa_mask[0]=00000000000000000000000000000000, sa_flags=none
+
+
+---------------  S Y S T E M  ---------------
+
+OS:PRETTY_NAME="Raspbian GNU/Linux 10 (buster)"
+NAME="Raspbian GNU/Linux"
+VERSION_ID="10"
+VERSION="10 (buster)"
+VERSION_CODENAME=buster
+ID=raspbian
+ID_LIKE=debian
+HOME_URL="http://www.raspbian.org/"
+SUPPORT_URL="http://www.raspbian.org/RaspbianForums"
+BUG_REPORT_URL="http://www.raspbian.org/RaspbianBugs"
+uname:Linux 5.10.11-v7+ #1399 SMP Thu Jan 28 12:06:05 GMT 2021 armv7l
+OS uptime: 0 days 1:54 hours
+libc:glibc 2.28 NPTL 2.28 
+rlimit (soft/hard): STACK 8192k/infinity , CORE 0k/infinity , NPROC 6968/6968 , NOFILE 1048576/1048576 , AS infinity/infinity , CPU infinity/infinity , DATA infinity/infinity , FSIZE infinity/infinity , MEMLOCK infinity/infinity
+load average:1.75 1.18 0.85
+
+/proc/meminfo:
+MemTotal:         958572 kB
+MemFree:          780860 kB
+MemAvailable:     860512 kB
+Buffers:            9600 kB
+Cached:           110932 kB
+SwapCached:           24 kB
+Active:            50652 kB
+Inactive:          90188 kB
+Active(anon):        740 kB
+Inactive(anon):    20636 kB
+Active(file):      49912 kB
+Inactive(file):    69552 kB
+Unevictable:          16 kB
+Mlocked:              16 kB
+SwapTotal:        102396 kB
+SwapFree:          95228 kB
+Dirty:                 8 kB
+Writeback:             0 kB
+AnonPages:         20328 kB
+Mapped:            33244 kB
+Shmem:              1044 kB
+KReclaimable:      10488 kB
+Slab:              23368 kB
+SReclaimable:      10488 kB
+SUnreclaim:        12880 kB
+KernelStack:        1040 kB
+PageTables:         1324 kB
+NFS_Unstable:          0 kB
+Bounce:                0 kB
+WritebackTmp:          0 kB
+CommitLimit:      581680 kB
+Committed_AS:     695576 kB
+VmallocTotal:    1097728 kB
+VmallocUsed:        3604 kB
+VmallocChunk:          0 kB
+Percpu:              464 kB
+CmaTotal:          65536 kB
+CmaFree:           57544 kB
+
+/sys/kernel/mm/transparent_hugepage/enabled:
+<Not Available>
+/sys/kernel/mm/transparent_hugepage/defrag (defrag/compaction efforts parameter):
+<Not Available>
+
+/proc/sys/kernel/threads-max (system-wide limit on the number of threads):
+13937
+/proc/sys/vm/max_map_count (maximum number of memory map areas a process may have):
+65530
+/proc/sys/kernel/pid_max (system-wide limit on number of process identifiers):
+32768
+
+/etc/ld.so.preload:
+/usr/lib/arm-linux-gnueabihf/libarmmem-${PLATFORM}.so
+
+Steal ticks since vm start: 0
+Steal ticks percentage since vm start:  0.000
+
+CPU:total 4 (initial active 4) (ARMv7), vfp, vfp3-32, simd
+
+/proc/cpuinfo:
+processor	: 0
+model name	: ARMv7 Processor rev 4 (v7l)
+BogoMIPS	: 51.20
+Features	: half thumb fastmult vfp edsp neon vfpv3 tls vfpv4 idiva idivt vfpd32 lpae evtstrm crc32 
+CPU implementer	: 0x41
+CPU architecture: 7
+CPU variant	: 0x0
+CPU part	: 0xd03
+CPU revision	: 4
+
+processor	: 1
+model name	: ARMv7 Processor rev 4 (v7l)
+BogoMIPS	: 51.20
+Features	: half thumb fastmult vfp edsp neon vfpv3 tls vfpv4 idiva idivt vfpd32 lpae evtstrm crc32 
+CPU implementer	: 0x41
+CPU architecture: 7
+CPU variant	: 0x0
+CPU part	: 0xd03
+CPU revision	: 4
+
+processor	: 2
+model name	: ARMv7 Processor rev 4 (v7l)
+BogoMIPS	: 51.20
+Features	: half thumb fastmult vfp edsp neon vfpv3 tls vfpv4 idiva idivt vfpd32 lpae evtstrm crc32 
+CPU implementer	: 0x41
+CPU architecture: 7
+CPU variant	: 0x0
+CPU part	: 0xd03
+CPU revision	: 4
+
+processor	: 3
+model name	: ARMv7 Processor rev 4 (v7l)
+BogoMIPS	: 51.20
+Features	: half thumb fastmult vfp edsp neon vfpv3 tls vfpv4 idiva idivt vfpd32 lpae evtstrm crc32 
+CPU implementer	: 0x41
+CPU architecture: 7
+CPU variant	: 0x0
+CPU part	: 0xd03
+CPU revision	: 4
+
+Hardware	: BCM2835
+Revision	: a22082
+Serial		: 00000000998e5a85
+Model		: Raspberry Pi 3 Model B Rev 1.2
+Online cpus:
+0-3
+Offline cpus:
+
+
+Memory: 4k page, physical 958572k(780860k free), swap 102396k(95228k free)
+
+vm_info: OpenJDK Server VM (11.0.9.1+1-post-Raspbian-1deb10u2) for linux- JRE (11.0.9.1+1-post-Raspbian-1deb10u2), built on Nov 28 2020 17:42:37 by "unknown" with gcc 8.3.0
+
+END.
